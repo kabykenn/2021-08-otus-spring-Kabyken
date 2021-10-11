@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="quizDao" class="ru.otus.kabyken.dao.QuizDaoSimple">
+        <property name="fileName" value="quiz.csv"/>
+    </bean>
+    <bean id="quizService" class="ru.otus.kabyken.service.QuizServiceImpl">
+        <constructor-arg name="quizDao" ref="quizDao"/>
+    </bean>
+</beans>
